@@ -1,0 +1,23 @@
+[project]
+name = "michelin-insights"
+version = "1.0.0"
+description = "Web app for data analysis and machine learning on the Michelin Guide."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = [
+    # seaborn 0.13 still passes `vert` to matplotlib's boxplot internally.
+    "ignore:vert. bool was deprecated:DeprecationWarning",
+    "ignore:vert. bool was deprecated:PendingDeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
