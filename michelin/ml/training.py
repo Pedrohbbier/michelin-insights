@@ -28,6 +28,7 @@ from michelin.ml.models import get_model_spec
 
 # Categories seen fewer times than this are grouped into one "infrequent" column.
 MIN_CATEGORY_FREQUENCY = 10
+# Hold out 20% for the accuracy score so the metric is not measured on training rows.
 TEST_SIZE = 0.2
 
 
